@@ -1,0 +1,35 @@
+sudo: true
+service: docker
+language: ruby
+cache:
+- bundler
+before_install:
+- sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables
+  -N DOCKER )
+- gem install bundler -v 1.15
+install:
+- bundle install
+rvm:
+- 2.3.0
+- 2.4.1
+notifications:
+  email:
+    recipients:
+    - sensu-plugin@sensu-plugins.io
+    on_success: change
+    on_failure: always
+script:
+- gem build sensu-plugins-kafka.gemspec
+- gem install sensu-plugins-kafka-*.gem
+- bundle exec rake quick
+- bundle exec rake kitchen:ruby-`echo $TRAVIS_RUBY_VERSION | sed -e "s/\.//g"`-debian-8
+deploy:
+  provider: rubygems
+  api_key:
+    secure: mZhCJKtOyUqcpJwZS2CmQPLu5bnyStuFAHYhxEfBhggac+zxAUJkNodAgZGiNmX9JHpuZ4SlpZuuyec7EvGeKWFFBEVPoWC7STzWhgM3se74Us1k/QCcQ0NP/Bh9Ic8RPev5d0ZCT1qiQ+wQonzbfFGRZEoXvQabEHPi0bfd+KsgVVkwcTRsmxC8Ml4xb020PigqOuPP5N9wHDfKAQJPJiPF9C6HzaVE1uoQz+jYYg9NPsgYmNlHefXn/s61PHP5556dOL8+tL8JDaTzFnYyKfQ+4L6LXiLVMVVCM+fJp0YVfCYCmyrJRJGgyxbyIeC72drEAGKH7Z+CQyVlwC3bXZKv1v80eFCRujMTj5JvaqXCRArIxlkQNhvhQmFTtXf8Y552JBzsU8Ej6L1XRzWFtZSLkZ1WSv44STexEBow7hEWntVcbGAWx+eQD+buBuqZXzGZ0epxuNMpLQRnCw6M3i6rJ2lfxuF2s2tBh216u70NmR7vuxgm1o4odAOv0YNKhu6xYZ2zw3CkcZwtb5KNXIrEk+q2iuJV6MbXDlJHZh1m0jncuVVvjYtTIcc8nm/tOWtkIiG9EciOjLnbrYbXfm0HBtFjHuIYguXTedOXLbnvkiB9CWU2EaqxurCoXV+DFf0jLaboUY5biYJbzimtL+soSvDO5nPnu3kuEfwU3uA=
+  gem: sensu-plugins-kafka
+  on:
+    tags: true
+    all_branches: true
+    rvm: 2.4.1
+    repo: sensu-plugins/sensu-plugins-kafka
