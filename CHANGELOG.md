@@ -6,6 +6,11 @@ This CHANGELOG follows the format located [here](https://github.com/sensu-plugin
 ## [Unreleased]
 
 ### Added
+- check-kafka-ping.rb(@yuri-zubov sponsored by Actility, https://www.actility.com)
+- check-topic.rb(@yuri-zubov sponsored by Actility, https://www.actility.com)
+- check-topics-name.rb(@yuri-zubov sponsored by Actility, https://www.actility.com)
+- metrics-kafka-http.rb(@yuri-zubov sponsored by Actility, https://www.actility.com)
+
 - Basic Skel to be used to make new plugin repo setup easier.
 - PR template
 - Rubocop config
