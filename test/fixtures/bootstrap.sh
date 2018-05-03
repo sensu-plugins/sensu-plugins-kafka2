@@ -8,7 +8,7 @@ set -e
 
 # base utilities that need to exist to start bootatraping
 apt-get update
-# apt-get install -y wget
+apt-get install -y build-essential
 
 # setup the rubies
 source /etc/profile

@@ -16,3 +16,5 @@
 [Installation and Setup](http://sensu-plugins.io/docs/installation_instructions.html)
 
 ## Notes
+
+Requires a c compiler to install see `test/bootstrap.sh` to see an example of installing it
