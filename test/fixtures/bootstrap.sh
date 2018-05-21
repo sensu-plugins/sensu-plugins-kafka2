@@ -24,5 +24,5 @@ RUBY_HOME=${MY_RUBY_HOME}
 
 # Install gems
 cd $DATA_DIR
-SIGN_GEM=false gem build sensu-plugins-kafka.gemspec
-gem install sensu-plugins-kafka-*.gem
+SIGN_GEM=false gem build sensu-plugins-kafka2.gemspec
+gem install sensu-plugins-kafka2-*.gem

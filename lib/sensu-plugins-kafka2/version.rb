@@ -1,4 +1,4 @@
-module SensuPluginsKafka
+module SensuPluginsKafka2
   module Version
     MAJOR = 0
     MINOR = 0

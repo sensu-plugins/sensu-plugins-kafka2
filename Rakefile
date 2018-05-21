@@ -30,7 +30,7 @@ end
 desc 'Test for binstubs'
 task :check_binstubs do
   unless Dir.glob('bin/**/*.rb').empty?
-    bin_list = Gem::Specification.load('sensu-plugins-kafka.gemspec').executables
+    bin_list = Gem::Specification.load('sensu-plugins-kafka2.gemspec').executables
     bin_list.each do |b|
       `which #{ b }`
       unless $CHILD_STATUS.success?

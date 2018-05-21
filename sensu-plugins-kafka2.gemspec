@@ -4,7 +4,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'date'
-require_relative 'lib/sensu-plugins-kafka'
+require_relative 'lib/sensu-plugins-kafka2'
 
 Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.authors                = ['Sensu-Plugins and contributors']
@@ -20,14 +20,14 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
                                'production_status'  => 'unstable - testing recommended',
                                'release_draft'      => 'false',
                                'release_prerelease' => 'false' }
-  s.name                   = 'sensu-plugins-kafka'
+  s.name                   = 'sensu-plugins-kafka2'
   s.platform               = Gem::Platform::RUBY
   s.post_install_message   = 'You can use the embedded Ruby by setting EMBEDDED_RUBY=true in /etc/default/sensu'
   s.require_paths          = ['lib']
   s.required_ruby_version  = '>= 2.3.0'
   s.summary                = 'Sensu plugins for kafka'
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
-  s.version                = SensuPluginsKafka::Version::VER_STRING
+  s.version                = SensuPluginsKafka2::Version::VER_STRING
 
   s.add_runtime_dependency 'sensu-plugin', '~> 2.4'
   s.add_runtime_dependency 'zookeeper', '~> 1.4'

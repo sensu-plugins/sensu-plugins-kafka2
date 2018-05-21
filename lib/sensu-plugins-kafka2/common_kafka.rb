@@ -1,4 +1,4 @@
-module CommonKafka
+module CommonKafka2
   def request
     RestClient::Request.execute(
       method: :get,
