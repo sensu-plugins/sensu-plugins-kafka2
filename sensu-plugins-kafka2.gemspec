@@ -29,7 +29,7 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsKafka2::Version::VER_STRING
 
-  s.add_runtime_dependency 'sensu-plugin', '~> 2.4'
+  s.add_runtime_dependency 'sensu-plugin', '>= 2.4', '< 4.0'
   s.add_runtime_dependency 'zookeeper', '~> 1.4'
   s.add_runtime_dependency 'rest-client', '~> 2.0'
 
