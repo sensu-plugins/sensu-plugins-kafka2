@@ -29,10 +29,10 @@
 require 'sensu-plugin/metric/cli'
 require 'rest-client'
 require 'json'
-require 'sensu-plugins-kafka'
+require 'sensu-plugins-kafka2'
 
 class MetricsKafkaHttp < Sensu::Plugin::Metric::CLI::Generic
-  include CommonKafka
+  include CommonKafka2
   option :endpoint,
          short: '-p ENDPOINT',
          long: '--endpoint ENDPOINT',

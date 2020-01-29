@@ -28,10 +28,10 @@
 require 'sensu-plugin/check/cli'
 require 'rest-client'
 require 'json'
-require 'sensu-plugins-kafka'
+require 'sensu-plugins-kafka2'
 
 class CheckKafkaPing < Sensu::Plugin::Check::CLI
-  include CommonKafka
+  include CommonKafka2
 
   option :endpoint,
          short: '-p ENDPOINT',
