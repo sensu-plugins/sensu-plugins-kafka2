@@ -6,7 +6,7 @@ cache:
 before_install:
 - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables
   -N DOCKER )
-- gem install bundler -v 1.15
+- gem install bundler -v 2.1
 install:
 - bundle install
 rvm:
