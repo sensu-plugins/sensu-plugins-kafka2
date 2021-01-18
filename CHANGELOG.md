@@ -21,4 +21,7 @@ This CHANGELOG follows the format located [here](https://github.com/sensu-plugin
 - removing EOL versions of ruby
 - patching for any known CVEs
 
+### Fixed
+- renamed kafka to kafka2 to fix [#4](https://github.com/sensu-plugins/sensu-plugins-kafka2/issues/4) (@maoe)
+
 [Unreleased]: https://github.com/sensu-plugins/sensu-plugins-kafka/compare/d4eebcfed091899571e21c0e433cceb3e386d2c7...HEAD
